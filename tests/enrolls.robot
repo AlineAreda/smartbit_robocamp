@@ -5,13 +5,6 @@ Documentation    Suite de testes de matrícula de alunos
 Resource    ../resources/base.resource
 
 *** Test Cases ***
-Teste no banco de dados
-    [Tags]    db
-
-    Connect To Postgress
-    ${user}                     Select Student Where Email    falcao@gmail.com
-    Disconnect from Database
-
 Deve matricular um aluno
     ${admin}    Create Dictionary
 
@@ -20,7 +13,8 @@ Deve matricular um aluno
     ...    pass=qacademy
 
     Connect To Postgress
-    Delete Enroll
+    Delete Enroll By Email      falcao@gmail.com
+    Disconnect from Database
 
     Do Login              ${admin}
     Go To Enrolls
