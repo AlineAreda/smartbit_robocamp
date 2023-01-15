@@ -6,21 +6,16 @@ Resource    ../resources/base.resource
 
 *** Test Cases ***
 Deve matricular um aluno
-    ${admin}    Create Dictionary
+    ${admin}      Get Fixture    admin
+    ${student}    Get Fixture    student
 
-    ...    name=Admin
-    ...    email=admin@smartbit.com
-    ...    pass=qacademy
-
-    Connect To Postgress
-    Delete Enroll By Email      falcao@gmail.com
-    Disconnect from Database
-
+    Reset Student Enroll        ${student}[email]    
     Do Login              ${admin}
+    
     Go To Enrolls
     Go To Enroll Form
-    Select Student        Falcão
-    Select Plan           Smart
+    Select Student        ${student}[name]
+    Select Plan           ${student}[enroll][plan]
     Fill Start Date
     Submit Enroll Form
     Verify Toaster        Matrícula cadastrada com sucesso
