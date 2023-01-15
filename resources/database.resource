@@ -14,15 +14,15 @@ Connect To Postgress
 Select Student Where Email
     [Arguments]    ${email}
 
-    ${query}    Set Variable
-    ...         SELECT * FROM public.students WHERE email = '${email}';
+    ${query}     Set Variable
+    ...          SELECT * FROM public.students WHERE email = '${email}';
+    ${result}    Query                                                      ${query}
 
-    ${result}    Query    ${query}
-
-    Log To Console      ${result}
+    [return]    ${result}[0]
 
 Delete Enroll
-    ${query}    Set Variable
-    ...         DELETE FROM public.enrollments where student_id = 1;
+    [Arguments]    ${student_id}
 
-    Execute SQL String    ${query}    
+    ${query}              Set Variable
+    ...                   DELETE FROM public.enrollments where student_id = ${student_id};
+    Execute SQL String    ${query}                                                            

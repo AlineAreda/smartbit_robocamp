@@ -9,7 +9,7 @@ Teste no banco de dados
     [Tags]    db
 
     Connect To Postgress
-    Select Student Where Email    falcao@gmail.com
+    ${user}                     Select Student Where Email    falcao@gmail.com
     Disconnect from Database
 
 Deve matricular um aluno
