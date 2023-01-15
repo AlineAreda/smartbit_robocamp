@@ -1,10 +1,12 @@
-***Settings***
+*** Settings ***
+
 Documentation    Suite de testes de autenticação
 ...              Administrador deve acessar o portal de gestão de academias
 
 Resource    ../resources/base.resource
 
-***Test Cases***
+*** Test Case ***
+
 Login do Administrador
     Go To Login Page
     Fill Credentials            admin@smartbit.com    qacademy

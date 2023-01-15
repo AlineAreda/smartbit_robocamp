@@ -1,5 +1,4 @@
-
-***Settings***
+*** Settings ***
 Documentation    Representação do menu superior
 
 Library    Browser

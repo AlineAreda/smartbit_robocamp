@@ -5,6 +5,13 @@ Documentation    Suite de testes de matrícula de alunos
 Resource    ../resources/base.resource
 
 *** Test Cases ***
+Teste no banco de dados
+    [Tags]    db
+
+    Connect To Postgress
+    Select Student Where Email    falcao@gmail.com
+    Disconnect from Database
+
 Deve matricular um aluno
     ${admin}    Create Dictionary
 
@@ -12,13 +19,14 @@ Deve matricular um aluno
     ...    email=admin@smartbit.com
     ...    pass=qacademy
 
-    Do Login             ${admin}
+    Connect To Postgress
+    Delete Enroll
+
+    Do Login              ${admin}
     Go To Enrolls
     Go To Enroll Form
-    Select Student       Falcão
-    Select Plan          Smart
+    Select Student        Falcão
+    Select Plan           Smart
     Fill Start Date
-   
-
-
-
+    Submit Enroll Form
+    Verify Toaster        Matrícula cadastrada com sucesso

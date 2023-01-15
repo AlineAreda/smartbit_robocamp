@@ -1,11 +1,11 @@
-***Settings***
+*** Settings ***
 Documentation    Imports necessários para iniciar testes
 
 Resource    components/navbar.resource 
 Resource    components/toast.resource      
 Resource    pages/login.resource
-Resource    pages/enroll.resource          
-
+Resource    pages/enroll.resource
+Resource    database.resource
 
 *** Keywords ***
 Do Login
