@@ -1,0 +1,12 @@
+{
+    "student": {
+        "feet_tall": 1.74,
+        "weight": 81,
+        "age": 30,
+        "email": "falcao@gmail.com",
+        "name": "Falcão"
+    },
+    "enroll": {
+        "plan": "Smart"
+    }
+}
