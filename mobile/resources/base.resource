@@ -4,8 +4,10 @@ Documentation    Arquivo principal
 Library    AppiumLibrary
 Library    JSONLibrary
 
-*** Variable ***
-${API_URL}      http://192.168.15.11:3333
+Resource    screens/login.resource
+Resource    database.resource
+Resource    services/sessions.resource
+Resource    services/students.resource
 
 *** Keywords ***
 Start App
