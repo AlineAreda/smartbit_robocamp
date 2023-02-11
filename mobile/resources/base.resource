@@ -5,9 +5,15 @@ Library    AppiumLibrary
 Library    JSONLibrary
 
 Resource    screens/login.resource
-Resource    database.resource
+Resource    screens/help.resource
+Resource    screens/components/popup.resource
+Resource    screens/components/footer.resource
+
 Resource    services/sessions.resource
 Resource    services/students.resource
+Resource    services/enrolls.resource
+
+Resource    database.resource
 
 *** Keywords ***
 Start App
